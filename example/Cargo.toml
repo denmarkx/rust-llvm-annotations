@@ -1,0 +1,12 @@
+[package]
+name = "example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+annotation = { path = "../annotation" }
+
+[profile.dev]
+opt-level = 3
+debuginfo-level = 0
+debug=false

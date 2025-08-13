@@ -1,0 +1,1 @@
+cd example && cargo rustc -- --emit=llvm-ir -O

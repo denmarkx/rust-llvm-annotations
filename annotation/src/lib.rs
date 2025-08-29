@@ -12,14 +12,14 @@ extern "C" {
 
 #[macro_export]
 macro_rules! annotate {
-    ($var:ident = $value:expr, $annotation:literal) => {
+    ($var:ident = $value:expr, $annotation:literal, $line_number:expr) => {
         let $var = $value;
         unsafe {
             llvm_ptr_annotation_p0(
                 &$var as *const _ as *const u8,
                 concat!($annotation, "\0").as_ptr(),
                 file!().as_ptr(),
-                line!() as i32,
+                $line_number as i32,
             );
         }
     };
